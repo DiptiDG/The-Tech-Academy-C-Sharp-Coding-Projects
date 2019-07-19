@@ -1,0 +1,68 @@
+﻿
+@using CarQuote.VieModel
+@model List<CarInsuranceVM>
+
+
+<div class="row no-gutters m-3">
+    <div class="card col-sm-18 col-md-15 col-lg-10 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Final Quote</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var Quote in Model)
+            {
+
+                using (Html.BeginForm("Unsubscribe", "Admin", FormMethod.Post))
+                {
+                    <input type="hidden" name="Id" value="@Quote.FirstName" />
+                    <div class="row">
+                        <div class="col">
+                            @Quote.FirstName
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.LastName
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.EmailAddress
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.DateOfBirth.Date
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.CarYear
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.CarMake
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.CarModel
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.DUI
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.SpeedingTickets
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.CoverageType
+                            <hr>
+                        </div>
+                        <div class="col">
+                            @Quote.Total
+                            <hr>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
